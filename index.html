@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#4b101f" />
+
+  <title>Anies Ellyza & Lt Izzat Farhan | Wedding Guestbook</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+
+<body>
+  <main class="page-container">
+
+    <header class="hero">
+      <div class="language-switch">
+        <button type="button" id="langEN" class="active">EN</button>
+        <span> | </span>
+        <button type="button" id="langBM">BM</button>
+      </div>
+      
+      <p class="eyebrow">WELCOME TO OUR WEDDING</p>
+
+      <h1 class="couple-names">
+        <span class="name-line">Anies Ellyza</span>
+        <span class="ampersand">&</span>
+        <span class="name-line">Lt Izzat Farhan</span>
+      </h1>
+
+      <div class="gold-divider"></div>
+
+      <p class="hero-subtitle">Forever Begins Here</p>
+      <p class="hashtag">#EllIzzfallinlove</p>
+
+      <p class="hero-description">
+        A little space for your lovely photos, wishes and memories.
+        <br />
+        Share a moment with us and let us keep it forever.
+      </p>
+    </header>
+
+    <section class="upload-section">
+      <div class="section-heading">
+        <p class="eyebrow">CAPTURE THE MOMENT</p>
+        <h2>Share Your Memories</h2>
+        <p>Upload your photo and leave us a little note.</p>
+      </div>
+
+      <form id="uploadForm" class="upload-card">
+
+        <label class="field-label" for="guestName">Your Name</label>
+        <input
+          type="text"
+          id="guestName"
+          placeholder="Enter your name"
+          maxlength="50"
+          required
+        />
+
+        <label class="field-label" for="guestMessage">Your Wishes</label>
+        <textarea
+          id="guestMessage"
+          placeholder="Write a lovely wish for the newlyweds..."
+          maxlength="300"
+          rows="4"
+        ></textarea>
+
+        <label class="field-label">Your Photos</label>
+
+        <label class="upload-box" for="photoInput" id="uploadBox">
+          <span class="upload-icon">＋</span>
+          <strong>Choose Your Photos</strong>
+          <span>Tap here to upload up to 5 photos</span>
+          <small>JPG, PNG or WEBP</small>
+        </label>
+
+        <input
+          type="file"
+          id="photoInput"
+          accept="image/jpeg,image/png,image/webp"
+          multiple
+          hidden
+        />
+
+        <div id="previewContainer" class="preview-container"></div>
+
+        <button type="submit" id="submitButton" class="gold-button">
+          Share Your Memories
+        </button>
+
+        <p id="uploadStatus" class="upload-status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="gallery-section">
+      <div class="section-heading">
+        <p class="eyebrow">A COLLECTION OF LOVE</p>
+        <h2>Our Memories</h2>
+        <p>Every photo tells a beautiful story.</p>
+      </div>
+
+      <div id="photoGallery" class="photo-gallery">
+        <div class="empty-gallery">
+          <span>♡</span>
+          <p>Your memories will appear here.</p>
+          <small>Be the first to share a moment!</small>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="gold-divider"></div>
+      <p>With Love,</p>
+      <h2>Anies <span>&</span> Izzat</h2>
+      <small>Thank you for being part of our special day.</small>
+      <p class="footer-hashtag">#EllIzzfallinlove</p>
+    </footer>
+
+  </main>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
+
