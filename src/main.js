@@ -12,8 +12,8 @@ const OWNER_KEY = "ellizzfallinloveOwnerTokens";
 const LANGUAGE_KEY = "weddingLanguage";
 
 const MAX_PHOTOS = 5;
-const MAX_IMAGE_SIZE = 1200;
-const TARGET_IMAGE_BYTES = 450 * 1024;
+const MAX_IMAGE_SIZE = 1000;
+const TARGET_IMAGE_BYTES = 200 * 1024;
 
 let selectedPhotos = [];
 let memories = [];
@@ -98,6 +98,7 @@ function normalizeMemory(memory) {
    IMAGE COMPRESSION
 ================================= */
 
+
 function compressImage(file) {
   return new Promise((resolve, reject) => {
     if (!file.type.startsWith("image/")) {
@@ -117,7 +118,7 @@ function compressImage(file) {
 
         let compressedBlob = null;
 
-        for (let attempt = 0; attempt < 6; attempt++) {
+        for (let attempt = 0; attempt < 8; attempt++) {
           const canvas = document.createElement("canvas");
 
           canvas.width = Math.max(1, Math.round(image.width * scale));
@@ -133,7 +134,7 @@ function compressImage(file) {
             canvas.height
           );
 
-          const quality = Math.max(0.45, 0.78 - attempt * 0.07);
+          const quality = Math.max(0.35, 0.72 - attempt * 0.06);
 
           compressedBlob = await new Promise((resolveBlob) => {
             canvas.toBlob(resolveBlob, "image/jpeg", quality);
@@ -147,7 +148,7 @@ function compressImage(file) {
             break;
           }
 
-          scale *= 0.85;
+          scale *= 0.82;
         }
 
         URL.revokeObjectURL(objectUrl);
